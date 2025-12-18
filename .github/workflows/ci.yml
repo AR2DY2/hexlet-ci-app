@@ -16,15 +16,16 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          cache: 'npm'
 
 
-      - name: Setup project (make setup)
-        run: make setup
+      - name: Hello from Hexlet action
+        uses: hexlet-components/hello-from-hexlet-action@release
 
 
-      - name: Run linter (make lint)
-        run: make lint
+      - name: Install dependencies
+        run: npm ci
 
 
-      - name: Run tests (make test)
-        run: make test
+      - name: Run tests
+        run: npm test
